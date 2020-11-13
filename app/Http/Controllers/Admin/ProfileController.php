@@ -24,12 +24,19 @@ class ProfileController extends Controller
         
         unset($form['_token']);
         
+        $profiles->fill($form);
+        $profiles->save();
+        
         return redirect('admin/profile/create');
     }
     
-    public function edit()
+    public function edit(Request $request)
     {
-        return view('admin.profile.edit');
+        $profiles = Profiles::find($request->id);
+        if(empty($profiles)) {
+            abort(404);
+        }
+        return view('admin.profile.edit', ['profiles_form' => $profiles]);
     }
     
     public function update(Request $request)
