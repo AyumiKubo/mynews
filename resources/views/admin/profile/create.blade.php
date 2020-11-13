@@ -33,7 +33,7 @@
                     <div class="form-group row">
                         <level class="col-md-2">趣味</level>
                         <div class="col-md-10">
-                            <testarea class="form-control" name="hobby" rows="20">{{ old('hobby') }}</testarea>
+                            <textarea class="form-control" name="hobby" rows="5">{{ old('hobby') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
