@@ -13,7 +13,7 @@ class CreateProfilehistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profilehistories', function (Blueprint $table) {
+            Schema::create('profilehistories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('profiles_id');
             $table->string('edited_at');
@@ -21,6 +21,7 @@ class CreateProfilehistoriesTable extends Migration
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
