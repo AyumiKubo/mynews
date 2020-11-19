@@ -36,7 +36,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="introduction">自己紹介</label>
                         <div class="col-md-10">
-                            <teztarea class="form-control" name="introduction" rows="20">{{ $profiles_form->introduction }}</teztarea>
+                            <textarea class="form-control" name="introduction" rows="20">{{ $profiles_form->introduction }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -47,6 +47,18 @@
                         </div>
                     </div>
                 </form>
+                <div class="row mt-5">
+                    <div class="col-md-4 mx-auto">
+                        <h2>編集履歴</h2>
+                        <ul class="list-group">
+                            @if ($profiles_form->profilehistories != NULL)
+                                @foreach ($profiles_form->profilehistories as $profile_history)
+                                    <li class="list-group-item">{{ $profile_history->edited_at }}</li>
+                                @endforeach
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
